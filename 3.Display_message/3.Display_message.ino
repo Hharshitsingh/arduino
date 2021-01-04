@@ -4,10 +4,16 @@ LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 void setup()
 {
     lcd.begin(16,2);
-    lcd.print("Hello, World!");
+    lcd.setCursor(10, 0);
+    lcd.print("Hello!");
+    lcd.setCursor(3, 1);
+    lcd.print("HARSHIT SINGH");
 }
 void loop()
 {
+    lcd.setCursor(0, 0);
+    // print the number of seconds since reset:
+    lcd.print(millis() / 1000);
     lcd.noDisplay();
     delay(500);
     lcd.display();
